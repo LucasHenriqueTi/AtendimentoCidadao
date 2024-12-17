@@ -1,0 +1,79 @@
+/* Container principal */
+.tooltip-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* Trigger do tooltip (elemento que ativa o tooltip) */
+.tooltip-trigger {
+  position: relative;
+  cursor: pointer;
+  color: #0b2a3b;
+  text-decoration: underline;
+  margin-left: 2px;
+}
+
+/* Tooltip oculto inicialmente */
+.tooltip-text {
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  width: 350px;
+  min-height: 10px;
+  background-color: #0b2a3b;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  bottom: 100%;
+  /* Posição acima do trigger */
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: opacity 0.3s;
+  z-index: 1;
+
+  white-space: normal;
+  word-wrap: break-word;
+  /* Para quebrar palavras longas */
+}
+
+/* Triângulo do balão */
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  /* Triângulo abaixo do tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Exibir tooltip no hover */
+.tooltip-trigger:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+#i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  font-size: .7em;
+  color: white;
+  background-color: #575757;
+  border-radius: 100%;
+  padding: 5px;
+  width: 5px;
+  height: 5px;
+  margin: 0;
+}

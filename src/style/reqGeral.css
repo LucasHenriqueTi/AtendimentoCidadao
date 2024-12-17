@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
+
+
+:root {
+    --etapa-ativa: #48a848;
+    --etapa-desat: #4D4D4D;
+}
+
+.completed-etapa {
+    border-color: var(--etapa-ativa) !important;
+}
+
+.completed-line {
+    background-color: var(--etapa-ativa) !important;
+}
+
+
+html,
+body,
+.body-container {
+    /*.body-container foi feito para que o card de geração de documento possa se sobrepõr diante do body e o deixar destacado*/
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    /* Aplica a fonte Inter a toda a página */
+    font-weight: bold;
+    /* Aplica negrito a todo o texto */
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+/*-----------*/
+.card-box {
+    /*card que irá guardar todos os elementos que irão compor o formulário*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #fff;
+    width: 50vw;
+    height: 46vh;
+    margin-top: 3%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px #0000001A;
+}
+
+#encam-select-label {
+    /* label para o select para fazer escolha dos setores*/
+    display: flex;
+    gap: 2%;
+}
+
+#encam-selec {
+    /*select para fazer escolha dos setores*/
+    width: 47% !important;
+    margin: 1% auto 0 27%;
+}
+
+#form-etapa2,
+#form-etapa3 {
+    display: none;
+}
+
+#form-etapa3 {
+    /*form da etapa 3*/
+    justify-content: center;
+    align-items: center;
+}
+
+#card-hipotec form {
+    gap: 2%;
+}
+
+.label-input-data {
+    /*irá ser elemento pai para "p" e "input(type="text")"*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    flex-direction: column;
+    width: 50%;
+    height: 26%;
+    line-height: .1em;
+    margin-top: 2%;
+}
+
+.label-input-data>p,
+.input-text {
+    /*label de entradar de dados referenciando os elementos filhos para melhor organização*/
+    display: flex;
+    align-items: center;
+    margin: 2px 16%;
+    width: 45%;
+    height: auto;
+}
+
+.input-text::first-letter {
+    text-transform: uppercase;
+}
+
+
+.input-text {
+    width: 48%;
+    min-height: 37px;
+    border: none;
+    box-shadow: 2px 3px 4px 0px #0000001c inset;
+    border-radius: 10px;
+    outline-color: #1A4862;
+}
+
+
+.div-progress-barr {
+    /*div feita para estilizar melhor a área onde ficará a barra de progresso das etapas*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-barr {
+    /*ul que irá guardar a lista(li) com as etapas(1, 2 e 3)*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    width: 100%;
+    height: 90%;
+    font-size: 1.4em;
+    padding: 0;
+    margin: 0;
+}
+
+/*ul e li*/
+#etapa1 {
+    /*etapa1 e line1 irão começar com a cor verde, logo precisam ter um local para diferenciar, aceito sugestões, isso poderia estar melhor*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    margin: 0;
+    border-radius: 30px;
+    border: 5px solid #48a848;
+}
+
+
+/*----------------*/
+
+
+.label-radio {
+    /*guarda um input radio e um elemento p*/
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    padding-left: 35px;
+    margin: 20px;
+    font-size: 16px;
+}
+
+.label-radio p {
+    margin: 0;
+    padding-right: 10px;
+}
+
+.input-radio {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    background-color: yellow;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+
+.label-radio .input-radio:checked~.checkmark {
+    background-color: #4CAF50;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.label-radio .input-radio:checked~.checkmark:after {
+    display: block;
+}
+
+.label-radio .checkmark:after {
+    top: 5px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+}
+
+
+
+.label-descript {
+    /*label para o textarea a descrição*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+}
+
+.label-descript>p {
+    /*<p>aragrafo para a descrição, dentro do label*/
+    width: 100%;
+    text-align: left;
+}
+
+#card-hipotec form {
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-evenly;
+    height: 72%;
+}
+
+#card-hipotec {
+    height: 300px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #47A2C3;
+    /* Cor azul do fundo */
+    color: #ffffff;
+    /* Cor do texto */
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+footer {
+    background-color: #47A2C3;
+    /* A mesma cor azul do background */
+    color: #fff;
+    /* Cor do texto */
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra opcional para o footer */
+    z-index: 1000;
+    /* Garante que o footer fique acima de outros elementos */
+}
+
+/*Responsividade com flex-wrap*/
+@media (max-width: 1100px) {
+
+    .card-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 80vh;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .label-input-data {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input-text {
+        width: 60%;
+    }
+
+
+
+    #encam-selec {
+        width: 100% !important;
+        margin: 0;
+    }
+
+    #encam-selec-label {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    }
+
+}
+
+/*--------------------------------------------*/
+
+.card-reqGeral .buttons {
+    /*caixa para row dos buttons*/
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: fixed;
+    bottom: 25%;
+    width: auto;
+    gap: 35px;
+}
+
+
+/*______________________________JsStepColors_______________________________*/
+
+/*form declaracao*/
+
+#form-declaracao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    height: 75%;
+
+    & .label-input-data {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        flex-direction: column;
+        width: 50%;
+        height: 40%;
+        line-height: .1em;
+        margin-top: 2%;
+    }
+
+    & .input-text {
+        width: 45%;
+        height: 50px;
+        border: none;
+        box-shadow: 2px 3px 4px 0px #0000003d inset;
+        border-radius: 10px;
+        outline-color: #1A4862;
+    }
+}
+
+#card-UniEsta {
+    display: flex;
+    align-items: center;
+}
+
+#card-UniEsta {
+    display: flex;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: space-evenly;
+    height: 28%;
+}
+
+/*card de confirmação de geração de documento*/
+.confirmationDoc.open {
+    display: flex;
+    /* Altera para exibir o modal */
+}
+
+.confirmationDoc {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: flex-end;
+    border-radius: 15px;
+    background-color: #ffffff;
+    width: 55vw;
+    height: 450px;
+    top: 30%;
+}
+
+.confirmationDoc img {
+    width: auto;
+    height: 300px;
+}
+
+.confirmationDoc button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(172, 1, 1);
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 48%;
+    margin: 2%;
+}
+
+.img-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+}
+
+dialog {
+    border: none;
+}
+
+/* Estilos do elemento que mostrará o tooltip */
